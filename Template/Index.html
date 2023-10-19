@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button onClick="reset()">hi</button>
+    <h2 class="title--text">Rock Paper Scissors</h2>
+    <div class="center">
+        <img class="hand" id="left" src="">
+        <div>
+            <h1 class="vs">VS.</h1>
+            <h1 class="vs" id="win">Winner: </h1>
+        </div>
+        <img class="hand" id="right" src="">
+    </div>
+    <div class="bottom">
+        <div class="score">
+            <table class="scoreP1">
+                <tr>
+                    <th>Round</th>
+                    <th>Winner</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td id="r1">-</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id="r2">-</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td id="r3">-</td>
+                </tr>
+            </table>
+        </div>
+        <img onClick="select('rock')" onClick="randomHand" class="selections" src="Images/rock.png">
+        <img onClick="select('paper')" class="selections" src="Images/paper.png">
+        <img onClick="select('scissors')" class="selections" src="Images/scissors.png">
+    </div>
+
+    <script src="Index.js"></script>
+</body>
+
+</html>
