@@ -1,0 +1,178 @@
+/*css, verander naar eigen stijl op eigen risico*/
+.content {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.header,
+.footer {
+    border: 2px solid black;
+    display: flex;
+    min-height: fit-content;
+    word-wrap: break-word;
+}
+
+.name {
+    text-align: center;
+    min-height: max-content;
+    font-size: 50px;
+    padding: 5%;
+}
+
+.player {
+    display: flex;
+    gap: 10px;
+
+    flex-direction: column;
+}
+
+.player--item {
+    border: 2px solid black;
+    height: max-content;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+
+.top,
+.singles,
+.score--indicator,
+.score--locked,
+.bottom,
+.combinations,
+.totals,
+.all--totals {
+    display: grid;
+}
+
+
+.singles,
+.top--item {
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.bottom--item {
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.totals--item {
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.singles,
+.combinations,
+.all--totals {
+
+    padding-left: 5px;
+    font-size: medium;
+    font-weight: bold;
+    border-right: 1px solid black;
+}
+
+.score--indicator {
+    background-color: #6feeb7;
+
+}
+
+.score--locked {
+    text-align: center;
+    background-color: beige;
+}
+
+.temp--score {
+    margin: auto;
+    text-align: center;
+}
+
+.buttonForNumbers {
+    background: none;
+    border: none;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.buttonForNumbers:hover {
+    background-color: #4cb899;
+}
+
+.score--indicator,
+.score--locked {
+    font-weight: bold;
+    font-size: large;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 10px;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.main--item {
+    min-width: 30vw;
+    border: 2px solid black;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 30vw;
+    background: #006400;
+    margin: 10px;
+    border: 10px solid #684d32;
+}
+
+.dice {
+    width: 10vw;
+    height: 10vw;
+    max-height: 150px;
+    max-width: 150px;
+    border: 2px solid black;
+    background-color: antiquewhite;
+    border-radius: 15%;
+}
+
+.header--item {
+    min-width: 10%;
+    margin: auto;
+}
+
+.header--text {
+    text-align: center;
+}
+
+.names {
+    min-width: 30%;
+}
+
+.rollButton {
+    background-color: #7cf9d6;
+    font-size: large;
+    font-weight: bold;
+}
+
+.rollButton:hover {
+    background-color: #6feeb7;
+}
+
+.rollButton:active {
+    background-color: #7fccb6;
+
+}
+
+.buttonForRestart {
+    border: none;
+    background: lightgray;
+
+}
+
+.buttonForRestart:hover {
+    background: gray;
+}

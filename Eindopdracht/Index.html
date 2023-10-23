@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+            <button onClick="restart()" class="buttonForRestart">Restart Here</button>
+            <div class="names header--item">
+                <p id="name1">Player 1</p>
+                <p id="name2">Player 2</p>
+            </div>
+            <div class="turn header--item">
+                <p class="header--text">Turn</p>
+                <p class="header--text" id="turn">Player 1</p> <!--de speler die aan de beurt is-->
+            </div>
+            <div class="rolls header--item">
+                <p class="header--text">Rolls left</p>
+                <p class="header--text" id="rolls">3</p><!--het aantal keer dat er nog gegooit kan worden-->
+            </div>
+            <button onclick="roll()" class="rollButton header--item ">
+                ROLL!</button><!--de roll button die on click d functie roll uitvoert in javascript-->
+            <div class="highscore header--item">
+                <p class="header--text">Highscore</p>
+                <p class="header--text" id="highscore">0</p> <!--highscore-->
+            </div>
+
+
+
+
+        </div>
+        <div class="main">
+            <div class="p1 player main--item">
+                <div class="name player--item">Naam</div>
+                <div class="top player--item">
+                    <div class="singles top--item">
+                        <p>Aces</p>
+                        <p>Twos</p>
+                        <p>Threes</p>
+                        <p>Fours</p>
+                        <p>Fives</p>
+                        <p>Sixes</p>
+                        <p>Subtotal</p>
+                        <p>Bonus</p>
+                        <p>Total</p>
+                    </div>
+                    <div class="score--indicator top--item">
+                        <!--de blauwe vakjes, hier kies je welke punten je wilt gebruiken-->
+                        <button onClick="onesLock()" class="buttonForNumbers" id="acesp1">
+                            <p class="temp--score" id="aces--p1">0</p>
+                        </button>
+                        <button onClick="twosLock()" class="buttonForNumbers" id="twosp1">
+                            <p class="temp--score" id="twos--p1">0</p>
+                        </button>
+                        <button onClick="threesLock()" class="buttonForNumbers" id="threesp1">
+                            <p class="temp--score" id="threes--p1">0</p>
+                        </button>
+                        <button onClick="foursLock()" class="buttonForNumbers" id="foursp1">
+                            <p class="temp--score" id="fours--p1">0</p>
+                        </button>
+                        <button onClick="fivesLock()" class="buttonForNumbers" id="fivesp1">
+                            <p class="temp--score" id="fives--p1">0</p>
+                        </button>
+                        <button onClick="sixesLock()" class="buttonForNumbers" id="sixesp1">
+                            <p class="temp--score" id="sixes--p1">0</p>
+                        </button>
+                    </div>
+                    <div class="score--locked top--item">
+                        <!--de beige vakjes, hier zie je hoeveel punten er gewonnen zijn in die rij-->
+                        <p class="locked--score" id="aces--p1--locked">-</p>
+                        <p class="locked--score" id="twos--p1--locked">-</p>
+                        <p class="locked--score" id="threes--p1--locked">-</p>
+                        <p class="locked--score" id="fours--p1--locked">-</p>
+                        <p class="locked--score" id="fives--p1--locked">-</p>
+                        <p class="locked--score" id="sixes--p1--locked">-</p>
+
+                        <p class="locked--score" id="subtotal--p1--locked">-</p>
+                        <p class="locked--score" id="bonus--p1--locked">-</p>
+                        <p class="locked--score" id="total--p1--locked">-</p>
+                    </div>
+
+                </div>
+                <div class="bottom player--item">
+                    <div class="combinations bottom--item">
+                        <p>Three of a kind</p>
+                        <p>Four of a kind</p>
+                        <p>Full house</p>
+                        <p>Small straight</p>
+                        <p>Large straight</p>
+                        <p>Yahtzee</p>
+                        <p>Chance</p>
+                        <p>Total</p>
+                    </div>
+                    <div class="score--indicator bottom--item">
+                        <button onClick="tkindLock()" class="buttonForNumbers">
+                            <p class="temp--score" id="tkind--p1">0</p>
+                        </button>
+                        <button onClick="fkindLock()" class="buttonForNumbers">
+                            <p class="temp--score" id="fkind--p1">0</p>
+                        </button>
+                        <button onClick="fouseLock()" class="buttonForNumbers">
+                            <p class="temp--score" id="fouse--p1">0</p>
+                        </button>
+                        <button onClick="smallLock()" class="buttonForNumbers">
+                            <p class="temp--score" id="small--p1">0</p>
+                        </button>
+                        <button onClick="largeLock()" class="buttonForNumbers">
+                            <p class="temp--score" id="large--p1">0</p>
+                        </button>
+                        <button onClick="yahtzeeLock()" class="buttonForNumbers">
+                            <p class="temp--score" id="yahtzee--p1">0</p>
+                        </button>
+                        <button onClick="chanceLock()" class="buttonForNumbers">
+                            <p class="temp--score" id="chance--p1">0</p>
+                        </button>
+                    </div>
+                    <div class="score--locked bottom--item">
+                        <p class="locked--score" id="tkind--p1--locked">-</p>
+                        <p class="locked--score" id="fkind--p1--locked">-</p>
+                        <p class="locked--score" id="fouse--p1--locked">-</p>
+                        <p class="locked--score" id="small--p1--locked">-</p>
+                        <p class="locked--score" id="large--p1--locked">-</p>
+                        <p class="locked--score" id="yahtzee--p1--locked">-</p>
+
+                        <p class="locked--score" id="chance--p1--locked">-</p>
+                        <p class="locked--score" id="total2--p1--locked">-</p>
+                    </div>
+                </div>
+                <div class="totals player--item ">
+                    <div class="all--totals totals--item">
+                        <p>Top section total</p>
+                        <p>Bottom section total</p>
+                        <p>Grand total</p>
+
+                    </div>
+                    <div class="score--indicator totals--item">
+                    </div>
+                    <!-- hier schrijf je de totalen op -->
+                    <div class="score--locked totals--item">
+                        <p class="locked--score" id="top--p1--total">-</p>
+                        <p class="locked--score" id="bottom--p1--locked">-</p>
+                        <p class="locked--score" id="grand--p1--locked">-</p>
+
+                    </div>
+                </div>
+            </div>
+            <!--Alle dobbelstenen appart-->
+            <div class="table main--item">
+                <img onClick="lockDie('die1')" class="dice" id="die1">
+                <img onClick="lockDie('die2')" class="dice" id="die2">
+                <img onClick="lockDie('die3')" class="dice" id="die3">
+                <img onClick="lockDie('die4')" class="dice" id="die4">
+                <img onClick="lockDie('die5')" class="dice" id="die5">
+            </div>
+            <!-- alles in p2 is hetzelfde als p1, als je niet de 2 player versie wil maken haal deze div dan weg en verander de header-->
+            <div class="p2 player main--item">
+                <div class="name player--item">Naam</div>
+                <div class="top player--item">
+                    <div class="singles top--item">
+                        <p>Aces</p>
+                        <p>Twos</p>
+                        <p>Threes</p>
+                        <p>Fours</p>
+                        <p>Fives</p>
+                        <p>Sixes</p>
+                        <p>Subtotal</p>
+                        <p>Bonus</p>
+                        <p>Total</p>
+                    </div>
+                    <div class="score--indicator top--item">
+                        <button onClick="onesLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="aces--p2">0</p>
+                        </button>
+                        <button onClick="twosLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="twos--p2">0</p>
+                        </button>
+                        <button onClick="threesLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="threes--p2">0</p>
+                        </button>
+                        <button onClick="foursLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="fours--p2">0</p>
+                        </button>
+                        <button onClick="fivesLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="fives--p2">0</p>
+                        </button>
+                        <button onClick="sixesLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="sixes--p2">0</p>
+                        </button>
+                    </div>
+                    <div class="score--locked top--item">
+                        <p class="locked--score" id="aces--p2--locked">-</p>
+                        <p class="locked--score" id="twos--p2--locked">-</p>
+                        <p class="locked--score" id="threes--p2--locked">-</p>
+                        <p class="locked--score" id="fours--p2--locked">-</p>
+                        <p class="locked--score" id="fives--p2--locked">-</p>
+                        <p class="locked--score" id="sixes--p2--locked">-</p>
+
+                        <p class="locked--score" id="subtotal--p2--locked">-</p>
+                        <p class="locked--score" id="bonus--p2--locked">-</p>
+                        <p class="locked--score" id="total--p2--locked">-</p>
+                    </div>
+
+                </div>
+                <div class="bottom player--item">
+                    <div class="combinations bottom--item">
+                        <p>Three of a kind</p>
+                        <p>Four of a kind</p>
+                        <p>Full house</p>
+                        <p>Small straight</p>
+                        <p>Large straight</p>
+                        <p>Yahtzee</p>
+                        <p>Chance</p>
+                        <p>Total</p>
+                    </div>
+                    <div class="score--indicator bottom--item">
+                        <button onClick="tkindLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="tkind--p2">0</p>
+                        </button>
+                        <button onClick="fkindLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="fkind--p2">0</p>
+                        </button>
+                        <button onClick="fouseLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="fouse--p2">0</p>
+                        </button>
+                        <button onClick="smallLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="small--p2">0</p>
+                        </button>
+                        <button onClick="largeLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="large--p2">0</p>
+                        </button>
+                        <button onClick="yahtzeeLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="yahtzee--p2">0</p>
+                        </button>
+                        <button onClick="chanceLocktwo()" class="buttonForNumbers">
+                            <p class="temp--score" id="chance--p2">0</p>
+                        </button>
+                    </div>
+                    <div class="score--locked bottom--item">
+                        <p class="locked--score" id="tkind--p2--locked">-</p>
+                        <p class="locked--score" id="fkind--p2--locked">-</p>
+                        <p class="locked--score" id="fouse--p2--locked">-</p>
+                        <p class="locked--score" id="small--p2--locked">-</p>
+                        <p class="locked--score" id="large--p2--locked">-</p>
+                        <p class="locked--score" id="yahtzee--p2--locked">-</p>
+
+                        <p class="locked--score" id="chance--p2--locked">-</p>
+                        <p class="locked--score" id="total2--p2--locked">-</p>
+                    </div>
+                </div>
+                <div class="totals player--item ">
+                    <div class="all--totals totals--item">
+                        <p>Top section total</p>
+                        <p>Bottom section total</p>
+                        <p>Grand total</p>
+
+                    </div>
+                    <div class="score--indicator totals--item">
+                    </div>
+                    <div class="score--locked totals--item">
+                        <p class="locked--score" id="top--p2--total">-</p>
+                        <p class="locked--score" id="bottom--p2--locked">-</p>
+                        <p class="locked--score" id="grand--p2--locked">-</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class=footer>
+            <h1>Gemaakt door: Rida Yousfi</h1>
+
+        </div>
+    </div>
+
+    <script src="Index.js"></script>
+    <script src="lockAll.js"></script>
+    <script src="lockAllp2.js"></script>
+    <script src="globalDeclarations.js"></script>
+    <script src="globalDeclarationsp2.js"></script>
+    <script src="checkAll.js"></script>
+    <script src="playerTwo.js"></script>
+    <script src="reset.js"></script>
+</body>
+
+</html>
