@@ -205,7 +205,7 @@ function grandTotal() {
 
     if (grandTotal > highscore) {
         highscore = grandTotal;
-        highScoreText = highscore;
+        highScoreText.textContent = highscore;
     }
 
 }
